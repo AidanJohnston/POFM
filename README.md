@@ -2,7 +2,7 @@
 Portable File Manipulator
 
 
-#COPY
+# COPY
 
 c,cp,copy
 
@@ -51,7 +51,7 @@ pofm delete [OPTIONS] [LOCATION]
 [LOCATION]
 The location can be a file or a directory
 
-#RENAME
+# RENAME
 rm,rename
 
 pofm rename [OPTIONS] [SOURCE] [FILENAME]
@@ -71,7 +71,7 @@ File to be renamed
 [FILENAME]
 New file name
 
-#EDIT
+# EDIT
 e,ed,edit
 
 pofm edit [OPTIONS] [SOURCE]
