@@ -3,11 +3,12 @@ Portable File Manipulator
 
 
 # COPY
-
+```
 c,cp,copy
-
+```
+```
 pofm copy [OPTIONS] [SOURCE] [DESTINATION]
-
+```
 [OPTIONS]
 
 -i      Promt for overwrites
