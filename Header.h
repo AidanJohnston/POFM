@@ -4,4 +4,8 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "pofm.h"
+#include "copy.h"
+#include "create.h"
+#include "edit.h"
+#include "move.h"
+#include "remove.h"
