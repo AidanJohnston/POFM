@@ -2,15 +2,6 @@
 #include "Header.h"
 
 
-typedef struct {
-
-	char* input_file;
-	bool verbose;
-	bool force;
-	bool output;
-	char* output_file;
-}ARGS;
-
 int main(int argc, char* argv[]) {
 
 	ARGS arguments;
@@ -147,11 +138,10 @@ int main(int argc, char* argv[]) {
 	}
 
 	if(flagGlobalHelp + flagOutputFileWrong + flagNoCommandType + flagNoInputFile == 0) {
-	    printf("Command type: %d\n", commandType);
-	    printf("Verbose: %d\n", arguments.verbose);
-	    printf("Force: %d\n", arguments.force);
-	    printf("Output: %d\n", arguments.output);
-	    printf("Output_file %s\n", arguments.output_file);
-	    printf("Input File %s\n", arguments.input_file);
+	   if(commandType == 0) {
+	       copy(arguments);
+	   }
 	}
+
+
 }
