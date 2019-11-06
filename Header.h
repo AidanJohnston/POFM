@@ -2,6 +2,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.>
+#include <stdbool.h>
 
 #include "pofm.h"
