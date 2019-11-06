@@ -1,4 +1,0 @@
-//
-// Delete a file
-//
-

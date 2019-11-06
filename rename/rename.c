@@ -1,4 +1,0 @@
-//
-// Rename a file
-//
-
