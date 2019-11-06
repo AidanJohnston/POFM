@@ -1,7 +1,6 @@
 # POFM
 Portable File Manipulator
 
-
 #COPY
 
 c,cp,copy
@@ -9,7 +8,7 @@ c,cp,copy
 pofm copy [OPTIONS] [SOURCE] [DESTINATION]
 
 [OPTIONS]
--i      Promt for overwrites
+-n      Promt for overwrites
 -r      Rename file to next avaiable name if file name is taken (ie. filename1.txt)
 -f      force(overides -n)
 -v      explain what is happening
@@ -36,7 +35,7 @@ pofm create [OPTIONS] [FILENAME]
 The name of the file
 
 #DELETE
-dl,delete
+remove
 
 pofm delete [OPTIONS] [LOCATION]
 
@@ -74,10 +73,11 @@ New file name
 #EDIT
 e,ed,edit
 
-pofm edit [OPTIONS] [SOURCE]
+pofm edit -n [SOURCE]
 
 [OPTIONS]
 
+-f          Force
 --help      Display help for command
 [SOURCE]
 The file being edited
