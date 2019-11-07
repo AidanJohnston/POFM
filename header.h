@@ -10,11 +10,3 @@
 #include "move.h"
 #include "remove.h"
 
-typedef struct {
-
-    char* input_file;
-    bool verbose;
-    bool force;
-    bool output;
-    char* output_file;
-}ARGS;

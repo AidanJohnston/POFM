@@ -1,6 +1,4 @@
-#pragma once
-#include "Header.h"
-
+#include "header.h"
 
 int main(int argc, char* argv[]) {
 

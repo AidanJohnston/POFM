@@ -1,2 +1,6 @@
 #pragma once
-#include "Header.h"
+#include "header.h"
+
+bool create(ARGS arguments) {
+    return true;
+}
