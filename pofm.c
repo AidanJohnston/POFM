@@ -48,6 +48,10 @@ int main(int argc, char* argv[]) {
             commandType = 4;
             argumentsTaken[1] = true;
         }
+        if (strcmp(argv[1], "move") == 0) {
+            commandType = 5;
+            argumentsTaken[1] = true;
+        }
         if (commandType == -1) {
             flagNoCommandType = true;
         }
@@ -139,7 +143,20 @@ int main(int argc, char* argv[]) {
 	   if(commandType == 0) {
 	       copy(arguments);
 	   }
+	   if(commandType == 1) {
+	       create(arguments);
+	   }
+	   if(commandType == 2) {
+	       removeFile(arguments);
+	   }
+	   if(commandType == 3) {
+	       renameFile(arguments);
+	   }
+	   if(commandType == 4) {
+	       edit(arguments);
+	   }
+	   if(commandType == 5) {
+	       move(arguments);
+	   }
 	}
-
-
 }

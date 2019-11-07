@@ -1,6 +1,6 @@
 #pragma once
 #include "header.h"
 
-bool removeFile(ARGS arguments) {
+bool renameFile(ARGS arguments) {
     return true;
 }

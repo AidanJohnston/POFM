@@ -9,4 +9,5 @@
 #include "edit.h"
 #include "move.h"
 #include "remove.h"
+#include "rename.h"
 
