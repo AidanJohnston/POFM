@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
 
 	//DEFAULT VALUES
 
-    arguments.input_file = "-";
+        arguments.input_file = "-";
 	arguments.verbose = false;
 	arguments.force = false;
 	arguments.output = false;
@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 	int commandType = -1;
 
 	bool argumentsTaken[argc];
-    memset( argumentsTaken, 0, argc*sizeof(bool));
+        memset( argumentsTaken, 0, argc*sizeof(bool));
 	argumentsTaken[0] = true;
 
 
