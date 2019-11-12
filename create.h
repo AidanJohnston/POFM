@@ -27,5 +27,12 @@
 
 bool create(ARGS arguments) 
 {
-	printf("hello\n");
+	FILE *fptr;
+	fptr = fopen(arguments.output_file, "w");
+
+	if (fptr == NULL)
+	{
+		printf("Cannot create file.\n");
+		exit(1);
+	}
 }
