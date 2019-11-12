@@ -49,14 +49,31 @@ bool create(ARGS arguments)
 		if (answer == 'n')
 			exit(EXIT_SUCCESS);
 		if (answer == 'y')
+		{
 			fptr = fopen(arguments.input_file, "w");
-	}
-	if (fptr == NULL)
-	{
-		printf("Cannot create file.\n");
-	}
+			
+			if (fptr == NULL)
+			{
+				printf("Cannot create file.\n");
+			}
 
-	if (arguments.verbose)
-		printf("File %s successfully created.\n", arguments.input_file);
-	else exit(EXIT_SUCCESS);
+			if (arguments.verbose)
+				printf("File %s successfully created.\n", arguments.input_file);
+			else exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			fptr = fopen(arguments.input_file, "w");
+
+			if (fptr == NULL)
+			{
+				printf("Cannot create file.\n");
+			}
+
+			if (arguments.verbose)
+				printf("File %s successfully created.\n", arguments.input_file);
+			else exit(EXIT_SUCCESS);
+		}
+			
+	}
 }
