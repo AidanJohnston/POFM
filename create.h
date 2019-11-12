@@ -28,7 +28,7 @@
 bool create(ARGS arguments) 
 {
 	FILE *fptr;
-	fptr = fopen(arguments.output_file, "w");
+	fptr = fopen(arguments.input_file, "w");
 
 	if (fptr == NULL)
 	{
