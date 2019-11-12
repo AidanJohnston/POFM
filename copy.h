@@ -35,6 +35,14 @@ typedef struct {
     bool output;
     char* output_file;
 }ARGS;
+bool doesFileExist(char* filename) {
+    if(access(filename, F_OK) != -1) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 bool copy(ARGS arguments) {
     printf("%s\n", arguments.input_file);
