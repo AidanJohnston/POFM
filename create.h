@@ -27,12 +27,35 @@
 
 bool create(ARGS arguments) 
 {
-	FILE *fptr;
-	fptr = fopen(arguments.input_file, "w");
+	FILE fptr;
+	
+	if(arguments.force)
+		fptr = fopen(arguments.input_file, "w");
 
+	if (doesFileExist(arguments.input_file)) 
+	{
+		printf("File %s already exists. Do you want to overwrite it? y/n\n" &arguments.input_file);
+		scanf("%c", answer);
+		while(answer =! 'y' || 'n')
+		{
+			printf("Invalid response. Please enter y/n");
+			scanf("%c", answer);
+		}
+
+		if (answer == 'n')
+			exit(1);
+		if (answer == 'y')
+			fptr = fopen(arguments.input_file, "w");
+	}
 	if (fptr == NULL)
 	{
 		printf("Cannot create file.\n");
 		exit(1);
 	}
+
+	if (arguments.verbose)
+		printf("File %s successfully created.\n", arguments.input_file);
+	
+	
+
 }
