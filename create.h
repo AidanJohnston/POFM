@@ -30,9 +30,12 @@ bool create(ARGS arguments)
 	FILE *fptr;
 	char answer;
 
-	if(arguments.force)
+	if (arguments.force)
+	{
 		fptr = fopen(arguments.input_file, "w");
-
+		exit(1);
+	}
+		
 	if (doesFileExist(arguments.input_file)) 
 	{
 		printf("File %s already exists. Do you want to overwrite it? y/n\n" &arguments.input_file);
@@ -56,7 +59,5 @@ bool create(ARGS arguments)
 
 	if (arguments.verbose)
 		printf("File %s successfully created.\n", arguments.input_file);
-	
-	
-
+	else exit(1);
 }
