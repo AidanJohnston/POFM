@@ -25,5 +25,7 @@
 #pragma once
 #include "header.h"
 
-bool create(ARGS arguments) {
+bool create(ARGS arguments) 
+{
+	printf("hello\n");
 }
