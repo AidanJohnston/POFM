@@ -22,7 +22,7 @@
 bool removeFile(ARGS arguments) {
 
     bool flag = false;
-    char option;
+    char option = "";
 
     if(doesFileExist(arguments.input_file)) {
         if (arguments.force) {
@@ -31,25 +31,27 @@ bool removeFile(ARGS arguments) {
                 printf("The file %s was removed.\n", arguments.input_file);
         }
         else {
-            printf("Are you sure you want to remove %s\n", arguments.input_file);
+            printf("Are you sure you want to remove %s?  (y/n)\n", arguments.input_file);
             scanf("%c", &option);
 
             while(!flag) {
-                if(option == "y" || option == "Y" || option == "n" || option == "N") {
+                printf("Comparing two values:\n ");
+                if(option == 121 || option == 110) {
                     flag = true;
                 }
                 else {
-                    printf("Unknown answer, please try again: \n");
+                    scanf("%c", &option);
+                    printf("Unknown answer, please try again: (y/n)\n");
                     scanf("%c", &option);
                 }
             }
-            if(option == "y" || option == "Y") {
+            if(option == 121) {
                 remove(arguments.input_file);
                 if(arguments.verbose)
                     printf("Removed %s\n", arguments.input_file);
             }
             else if(arguments.verbose) {
-                printf("Will not remove %s\n");
+                printf("Will not remove %s\n", arguments.input_file);
             }
         }
     }
