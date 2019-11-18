@@ -58,7 +58,7 @@ bool renameFile(ARGS arguments) {
         else {
             if(arguments.output) {
                 if(doesFileExist(arguments.output_file)) {
-                    printf("Are you sure you want to copy %s?  %s already exist. (y/n)\n", arguments.input_file, arguments.output_file);
+                    printf("Are you sure you want to rename %s?  %s already exist. (y/n)\n", arguments.input_file, arguments.output_file);
                     scanf("%c", &option);
 
                     while(!flag) {
@@ -139,6 +139,6 @@ bool renameFile(ARGS arguments) {
         }
     }
     else if(arguments.verbose) {
-        printf("The file %s doesn't exist, could not rename.\n");
+        printf("The file %s doesn't exist, could not rename.\n", arguments.input_file);
     }
 }
