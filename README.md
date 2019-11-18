@@ -5,7 +5,9 @@ Portable File Manipulator
 
 c,cp,copy
 
+```sh
 pofm copy [OPTIONS] [SOURCE] [DESTINATION]
+```
 
 [OPTIONS]
 -n      Promt for overwrites
@@ -14,16 +16,19 @@ pofm copy [OPTIONS] [SOURCE] [DESTINATION]
 -v      explain what is happening
 --help  Displays help for the command
 
+```sh
 [SOURCE]
 Source location of file to be copied
+```
 
 [DESTINATION]
 Destination location for the copied file
 
 #CREATE
 cr,create
-
+```sh
 pofm create [OPTIONS] [FILENAME]
+```
 
 [OPOTIONS]
 -n      promt for overwrites
@@ -37,7 +42,9 @@ The name of the file
 #DELETE
 remove
 
+```sh
 pofm delete [OPTIONS] [LOCATION]
+```
 
 [OPTIONS]
 -f      force
@@ -53,7 +60,9 @@ The location can be a file or a directory
 #RENAME
 rm,rename
 
+```sh
 pofm rename [OPTIONS] [SOURCE] [FILENAME]
+```
 
 [OPTIONS]
 
@@ -73,7 +82,9 @@ New file name
 #EDIT
 e,ed,edit
 
+```sh
 pofm edit -n [SOURCE]
+```
 
 [OPTIONS]
 
