@@ -1,7 +1,7 @@
 # POFM
 Portable File Manipulator
 
-#COPY
+## COPY
 
 c,cp,copy
 
@@ -30,7 +30,7 @@ Source location of file to be copied
 
 Destination location for the copied file
 
-#CREATE
+## CREATE
 
 cr,create
 
@@ -52,7 +52,7 @@ pofm create [OPTIONS] [FILENAME]
 
 The name of the file
 
-#DELETE
+## DELETE
 
 remove
 
@@ -78,7 +78,7 @@ pofm delete [OPTIONS] [LOCATION]
 
 The location can be a file or a directory
 
-#RENAME
+## RENAME
 
 rm,rename
 
@@ -108,7 +108,7 @@ File to be renamed
 
 New file name
 
-#EDIT
+## EDIT
 
 e,ed,edit
 
