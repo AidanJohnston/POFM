@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(POFM C)
+project("POFM")
 
-set(CMAKE_C_STANDARD 99)
 
-add_executable(POFM src/pofm.c)
+add_executable(POFM "src/pofm.c")
