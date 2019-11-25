@@ -36,16 +36,14 @@ typedef struct {
     char* output_file;
 }ARGS;
 bool doesFileExist(char* filename) {
-    if(access(filename, F_OK) != -1) {
-        return true;
-    }
-    else{
-        return false;
-    }
+   FILE* fptr = fopen(filename, "r");
+   if(fptr)
+       return true;
+   else
+       return false;
 }
 
 bool copy(ARGS arguments) {
-
     char option = 0;
     bool flag = false;
     if(doesFileExist(arguments.input_file)) {
