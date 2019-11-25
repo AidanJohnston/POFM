@@ -73,7 +73,6 @@ bool copy(ARGS arguments) {
                 if(doesFileExist(arguments.output_file)) {
                     printf("Are you sure you want to copy %s?  %s already exist. (y/n)\n", arguments.input_file, arguments.output_file);
                     scanf("%c", &option);
-                    printf("%d\n", option);
                     while(!flag) {
                         if(option == 121 || option == 110) {
                             flag = true;

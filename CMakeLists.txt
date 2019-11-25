@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.8)
 project(POFM C)
 
 set(CMAKE_C_STANDARD 99)
