@@ -57,11 +57,11 @@ bool create(ARGS arguments)
 			exit(1);
 		if (answer == '131')
 		{
-			fptr = fopen(arguments.input_file, "w");
-			if (input == NULL)
+			FILE* fptr = fopen(arguments.input_file, "w");
+			if (fptr == NULL)
 			{
 				printf("Cannot create %s.\n", arguments.input_file);
-				exit(1)
+				exit(1);
 			}
 
 			if (arguments.verbose)

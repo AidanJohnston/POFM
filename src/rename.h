@@ -32,7 +32,7 @@
 #include "header.h"
 
 bool renameFile(ARGS arguments) {
-    char* option = "";
+    char option = 0;
     bool flag = false;
     if(doesFileExist(arguments.input_file)) {
         if(arguments.force) {

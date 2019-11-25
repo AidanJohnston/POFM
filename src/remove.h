@@ -22,7 +22,7 @@
 bool removeFile(ARGS arguments) {
 
     bool flag = false;
-    char option = "";
+    char option = 0;
 
     if(doesFileExist(arguments.input_file)) {
         if (arguments.force) {
