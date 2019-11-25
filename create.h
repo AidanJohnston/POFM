@@ -26,54 +26,67 @@
 #include "header.h"
 
 bool create(ARGS arguments) 
-{
-	FILE *fptr;
-	char answer;
+{	
+	if (doesFileExist(arguments.input_file))
+	{
+		if (arguments.force)
+		{
+			FILE* input = fopen(arguments.input_file, "w");
+			if (input == NULL)
+			{
+				printf("Cannot create %s.\n", arguments.input_file);
+				exit(1);
+			}
 
-	if (arguments.force)
-	{
-		fptr = fopen(arguments.input_file, "w");
-		exit(EXIT_SUCCESS);
-	}
-		
-	if (doesFileExist(arguments.input_file)) 
-	{
+			if (arguments.verbose)
+				printf("File %s successfully created.\n", arguments.input_file);
+			exit(1);
+		}
+
 		printf("File %s already exists. Do you want to overwrite it? y/n\n", arguments.input_file);
-		scanf("%c", &answer);
-		while(answer =! 'y' || 'n')
+		int answer;
+		scanf("%d", &answer);
+
+		while (answer = !'131' || '116')
 		{
 			printf("Invalid response. Please enter y/n");
-			scanf("%c", &answer);
+			scanf("%d", &answer);
 		}
 
-		if (answer == 'n')
-			exit(EXIT_SUCCESS);
-		if (answer == 'y')
+		if (answer == '116')
+			exit(1);
+		if (answer == '131')
 		{
 			fptr = fopen(arguments.input_file, "w");
-			
-			if (fptr == NULL)
+			if (input == NULL)
 			{
-				printf("Cannot create file.\n");
+				printf("Cannot create %s.\n", arguments.input_file);
+				exit(1)
 			}
 
 			if (arguments.verbose)
-				printf("File %s successfully created.\n", arguments.input_file);
-			else exit(EXIT_SUCCESS);
-		}
-		else
-		{
-			fptr = fopen(arguments.input_file, "w");
-
-			if (fptr == NULL)
 			{
-				printf("Cannot create file.\n");
-			}
-
-			if (arguments.verbose)
 				printf("File %s successfully created.\n", arguments.input_file);
-			else exit(EXIT_SUCCESS);
+				exit(1);
+			}
+			else exit(1);
 		}
-			
+	}
+	else
+	{
+		FILE* input = fopen(arguments.input_file, "w");
+
+		if (input == NULL)
+		{
+			printf("Cannot create file.\n");
+			exit(1);
+		}
+
+		if (arguments.verbose)
+		{
+			printf("File %s successfully created.\n", arguments.input_file);
+			exit(1);
+		}
+		else exit(1);
 	}
 }
