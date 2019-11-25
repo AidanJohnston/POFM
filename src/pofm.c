@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
 
 	//DEFAULT VALUES
 
-        arguments.input_file = "-";
+	arguments.input_file = "-";
 	arguments.verbose = false;
 	arguments.force = false;
 	arguments.output = false;
