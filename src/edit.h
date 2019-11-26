@@ -7,7 +7,7 @@
 void displayFile(ARGS arguments)
 {
 	FILE * fp;
-	fp = fopen(arguments.input_file, "a+");
+	fp = fopen(arguments.input_file, "a+"); 
 	int c;
 	int lineNumber = 0;
 	printf(" 0 - ");
