@@ -1,9 +1,9 @@
 #pragma once
 #include "header.h"
 #include "stdio.h"
-#include <string>
-//#include <curses.h>
-
+#include "fstream"
+#include "iostream"
+using namespace std;
 void displayFile(ARGS arguments)
 {
 	FILE * fp;
@@ -32,32 +32,13 @@ void displayFile(ARGS arguments)
 
 void append(ARGS arguments) 
 {
-
-	FILE * fp;
-	fp = fopen(arguments.input_file, "a+");
-
-	char input[255];
+	ofstream file;
+	file.open(arguments.input_file, ios_base::app);
+	string input = "";
 	printf("Enter text to append\n");
-	fgets(input, 255, stdin);
-	int count = 0;
-	while (input[count] != 10) 
-	{
-		count++;
-		printf("%c", input[count]);
-	}
-	printf("%d", sizeof(char)*count);
-	char * tinput = (char*)malloc(sizeof(char)*count);
-	count = 0;
-	while(input[count] !=10) 
-	{
-		tinput[count] = input[count];
-		printf("%c", tinput[count]);
-		count++;
-	}
-	printf("appending %s\n", tinput);
-	fwrite(input, 1, sizeof(tinput), fp);
-
-	fclose(fp);
+	getline(cin, input);
+	file << endl << input;
+	file.close();
 }
 
 bool edit(ARGS arguments) 

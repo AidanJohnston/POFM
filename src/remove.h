@@ -56,4 +56,6 @@ bool removeFile(ARGS arguments) {
     }
     else if(arguments.verbose)
         printf("The file %s doesn't exist, could not remove.\n", arguments.input_file);
+
+	return true;
 }
