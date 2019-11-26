@@ -47,15 +47,16 @@ bool create(ARGS arguments)
 		int answer;
 		scanf("%d", &answer);
 
-		while (answer = !'131' || '116')
+		while (answer = !121 ||110)
 		{
+            scanf("%d", &answer);
 			printf("Invalid response. Please enter y/n");
 			scanf("%d", &answer);
 		}
 
-		if (answer == '116')
+		if (answer == 110)
 			exit(1);
-		if (answer == '131')
+		if (answer == 121)
 		{
 			FILE* fptr = fopen(arguments.input_file, "w");
 			if (fptr == NULL)
