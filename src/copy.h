@@ -28,20 +28,7 @@
 
 #pragma once
 #include "header.h"
-typedef struct {
-    char* input_file;
-    bool verbose;
-    bool force;
-    bool output;
-    char* output_file;
-}ARGS;
-bool doesFileExist(char* filename) {
-   FILE* fptr = fopen(filename, "r");
-   if(fptr)
-       return true;
-   else
-       return false;
-}
+
 
 bool copy(ARGS arguments) {
     char option = 0;
