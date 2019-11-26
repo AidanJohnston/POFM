@@ -1,7 +1,7 @@
 #pragma once
 #include "header.h"
 #include "stdio.h"
-#inlude "string.h"
+#include <string>
 //#include <curses.h>
 
 void displayFile(ARGS arguments)
@@ -21,7 +21,7 @@ void displayFile(ARGS arguments)
 		{
 			lineNumber++;
 			printf("\n %d - ", lineNumber);
-		}
+		}		
 		else
 		{
 			printf("%c", c);
