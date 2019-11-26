@@ -32,7 +32,7 @@
 #include "header.h"
 
 bool renameFile(ARGS arguments) {
-	printf("DOING A RENAME");
+
     char option = 0;
     bool flag = false;
     if(doesFileExist(arguments.input_file)) {
@@ -45,12 +45,12 @@ bool renameFile(ARGS arguments) {
             if(output == NULL)
                 printf("Couldn't open %s\n", arguments.output_file), exit(1);
 
-            char ch = "";
+            char ch = 0;
             while ((ch = fgetc(input)) != EOF)
                 fputc(ch, output);
 
-            remove(input);
             fclose(input);
+            remove(arguments.input_file);
             fclose(output);
 
             if(arguments.verbose)
@@ -81,12 +81,12 @@ bool renameFile(ARGS arguments) {
                         if(output == NULL)
                             printf("Couldn't open file\n"), exit(1);
 
-                        char ch = "";
+                        char ch = 0;
                         while((ch = fgetc(input)) != EOF)
                             fputc(ch, output);
 
-                        remove(input);
                         fclose(input);
+                        remove(arguments.input_file);
                         fclose(output);
 
                         if(arguments.verbose)
@@ -105,12 +105,12 @@ bool renameFile(ARGS arguments) {
                     if(output == NULL)
                         printf("Couldn't open file\n"), exit(1);
 
-                    char ch = "";
+                    char ch = 0;
                     while((ch = fgetc(input)) != EOF)
                         fputc(ch, output);
 
-                    remove(input);
                     fclose(input);
+                    remove(arguments.input_file);
                     fclose(output);
 
                     if(arguments.verbose)
@@ -126,12 +126,12 @@ bool renameFile(ARGS arguments) {
                 if (output == NULL)
                     printf("Couldn't open file\n"), exit(1);
 
-                char ch = "";
+                char ch = 0;
                 while ((ch = fgetc(input)) != EOF)
                     fputc(ch, output);
 
-                remove(input);
                 fclose(input);
+                remove(arguments.input_file);
                 fclose(output);
 
                 if (arguments.verbose)

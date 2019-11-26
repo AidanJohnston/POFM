@@ -43,12 +43,12 @@ bool move(ARGS arguments) {
             if(output == NULL)
                 printf("Couldn't open %s\n", arguments.output_file), exit(1);
 
-            char ch = "";
+            char ch = 0;
             while ((ch = fgetc(input)) != EOF)
                 fputc(ch, output);
 
-            remove(input);
             fclose(input);
+            remove(arguments.input_file);
             fclose(output);
 
             if(arguments.verbose)
@@ -79,12 +79,12 @@ bool move(ARGS arguments) {
                         if(output == NULL)
                             printf("Couldn't open file\n"), exit(1);
 
-                        char ch = "";
+                        char ch = 0;
                         while((ch = fgetc(input)) != EOF)
                             fputc(ch, output);
 
-                        remove(input);
                         fclose(input);
+                        remove(arguments.input_file);
                         fclose(output);
 
                         if(arguments.verbose)
@@ -103,12 +103,12 @@ bool move(ARGS arguments) {
                     if(output == NULL)
                         printf("Couldn't open file\n"), exit(1);
 
-                    char ch = "";
+                    char ch = 0;
                     while((ch = fgetc(input)) != EOF)
                         fputc(ch, output);
 
-                    remove(input);
                     fclose(input);
+                    remove(arguments.input_file);
                     fclose(output);
 
                     if(arguments.verbose)
@@ -124,12 +124,12 @@ bool move(ARGS arguments) {
                 if (output == NULL)
                     printf("Couldn't open file\n"), exit(1);
 
-                char ch = "";
+                char ch = 0;
                 while ((ch = fgetc(input)) != EOF)
                     fputc(ch, output);
 
-                remove(input);
                 fclose(input);
+                remove(arguments.input_file);
                 fclose(output);
 
                 if (arguments.verbose)
