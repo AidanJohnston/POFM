@@ -37,7 +37,7 @@ void append(ARGS arguments)
 	fp = fopen(arguments.input_file, "a+");
 
 	char input[255];
-	printf("Enter text to append\n");
+	printf("Enter Text to AAppend\n");
 	fgets(input, 255, stdin);
 	int count = 0;
 	while (input[count] != 10) 
@@ -54,7 +54,36 @@ void append(ARGS arguments)
 		printf("%c", tinput[count]);
 		count++;
 	}
-	printf("appending %s\n", tinput);
+	printf("\nAppending %s...\n", tinput);
+	fwrite(input, 1, sizeof(tinput), fp);
+
+	fclose(fp);
+}
+
+void insert(ARGS arguments){
+	
+	FILE * fp;
+	fp = fopen(arguments.input_file, "a+");
+
+	char input[255];
+	printf("Enter Text to AAppend\n");
+	fgets(input, 255, stdin);
+	int count = 0;
+	while (input[count] != 10) 
+	{
+		count++;
+		printf("%c", input[count]);
+	}
+	printf("%d", sizeof(char)*count);
+	char * tinput = (char*)malloc(sizeof(char)*count);
+	count = 0;
+	while(input[count] !=10) 
+	{
+		tinput[count] = input[count];
+		printf("%c", tinput[count]);
+		count++;
+	}
+	printf("\nAppending %s...\n", tinput);
 	fwrite(input, 1, sizeof(tinput), fp);
 
 	fclose(fp);
