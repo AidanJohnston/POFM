@@ -32,6 +32,7 @@
 #include "header.h"
 
 bool renameFile(ARGS arguments) {
+	printf("DOING A RENAME");
     char option = 0;
     bool flag = false;
     if(doesFileExist(arguments.input_file)) {
