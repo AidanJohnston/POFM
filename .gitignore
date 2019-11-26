@@ -156,6 +156,10 @@ artifacts/
 # StyleCop
 StyleCopReport.xml
 
+#Files made during testing
+*.txt
+*.exe
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
