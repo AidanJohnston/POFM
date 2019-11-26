@@ -35,7 +35,6 @@ bool removeFile(ARGS arguments) {
             scanf("%c", &option);
 
             while(!flag) {
-                printf("Comparing two values:\n ");
                 if(option == 121 || option == 110) {
                     flag = true;
                 }
