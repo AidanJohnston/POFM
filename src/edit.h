@@ -15,7 +15,7 @@ void clear(ARGS arguments){
     ofs.close();
 }
 
-void displayFile(ARGS arguments)
+void displayFile(ARGS arguments, int linecount)
 {
 	FILE * fp;
 	fp = fopen(arguments.input_file, "a+");
@@ -32,6 +32,11 @@ void displayFile(ARGS arguments)
 		{
 			lineNumber++;
 			printf("\n %d - ", lineNumber);
+			if (lineNumber >= linecount) 
+			{
+				fclost(fp);
+				return;
+			}
 		}		
 		else
 		{
@@ -94,7 +99,11 @@ bool edit(ARGS arguments)
 				break;
 		    case 'i': insert(arguments);
 				break;
-			case 'p': displayFile(arguments);
+			case 'p': 
+				int linecount;
+				cout << "Enter the number of lines to read\n"
+				cin << linecount;
+				displayFile(arguments, linecount);
 				break;
 			case 'e': exit = true;
 				break;
