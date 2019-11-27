@@ -46,7 +46,6 @@ bool create(ARGS arguments)
 		printf("File %s already exists. Do you want to overwrite it? y/n\n", arguments.input_file);
 		char answer = 0;
 		scanf("%c", &answer);
-        printf("%d\n", answer);
 		while (answer != 121 && answer != 110)
 		{
             scanf("%c", &answer);
