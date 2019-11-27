@@ -1,4 +1,4 @@
-#include "header.h";
+#include "header.h"
 
 int main(int argc, char* argv[]) {
 
@@ -128,15 +128,19 @@ int main(int argc, char* argv[]) {
 		       "\t-f\t Force: force the command, don't ask before overwriting\n"
 		       "\t-o [FILE]\t Output: The Output location/filename of the copy command, if not called the default location/filename will be used.\n\n"
 			);
+		getchar();
 	}
 	if(flagOutputFileWrong){
 		printf("No output file given, try --help for more information\n");
+		getchar();
 	}
 	if(flagNoCommandType) {
 		printf("No command type given, try --help for list of command types\n");
+		getchar();
 	}
 	if(flagNoInputFile && !flagGlobalHelp) {
 		printf("No input file given, try --help for pofm usage\n");
+		getchar();
 	}
 
 	if(flagGlobalHelp + flagOutputFileWrong + flagNoCommandType + flagNoInputFile == 0) {
@@ -159,5 +163,4 @@ int main(int argc, char* argv[]) {
 	       move(arguments);
 	   }
 	}
-	getchar();
 }

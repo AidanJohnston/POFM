@@ -8,6 +8,13 @@
 #include <streambuf>
 
 using namespace std;
+
+void clear(ARGS arguments){
+    ofstream ofs;
+    ofs.open(arguments.input_file, ofstream::out | ofstream::trunc);
+    ofs.close();
+}
+
 void displayFile(ARGS arguments)
 {
 	FILE * fp;
@@ -67,12 +74,6 @@ void insert(ARGS arguments)
 	fileOFStream.close();
 }
 
-void clear(ARGS arguments){
-	ofstream ofs;
-	ofs.open(arguments.input_file, ofstream::out | ofstream::trunc);
-	ofs.close();
-}
-
 bool edit(ARGS arguments) 
 {
 
@@ -88,9 +89,9 @@ bool edit(ARGS arguments)
 		{
 			case 'a': append(arguments);
 				break;
-			case 'c': printf("CLEAR\n");
+			case 'c': clear(arguments);
 				break;
-			case 'i': printf("INSERT\n");
+		    case 'i': insert(arguments);
 				break;
 			case 'p': displayFile(arguments);
 				break;
