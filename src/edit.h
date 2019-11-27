@@ -109,7 +109,7 @@ void insert(ARGS arguments)
 
 	ofstream fileOFStream;
 	fileOFStream.open(arguments.input_file, ios_base::app);
-	fileOFStream << endl << fileString;
+	fileOFStream << fileString;
 	fileOFStream.close();
 }
 
