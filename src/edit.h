@@ -57,8 +57,16 @@ void displayFile(ARGS arguments, int linecount)
 			printf("\n %d - ", lineNumber);
 			if (lineNumber >= linecount) 
 			{
-				fclost(fp);
-				return;
+				//fclost(fp);
+				//return;
+				char c = '';
+				cout << "Press enter for next page or e to exit";
+				cin << c;
+				if (c == 'e') 
+				{
+					fclose(fp);
+					return;
+				}
 			}
 		}		
 		else
