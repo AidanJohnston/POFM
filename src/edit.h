@@ -47,8 +47,8 @@ void append(ARGS arguments)
 
 void insert(ARGS arguments)
 {
-	std::ifstream file(arguments.input_file);
-	std::string fileString((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+	ifstream file(arguments.input_file);
+	string fileString((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
 	clear(arguments);
 	
 	string input = "";
@@ -68,8 +68,8 @@ void insert(ARGS arguments)
 }
 
 void clear(ARGS arguments){
-	std::ofstream ofs;
-	ofs.open(arguments.input_file, std::ofstream::out | std::ofstream::trunc);
+	ofstream ofs;
+	ofs.open(arguments.input_file, ofstream::out | ofstream::trunc);
 	ofs.close();
 }
 
