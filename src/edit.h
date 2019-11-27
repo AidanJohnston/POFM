@@ -44,22 +44,22 @@ void displayFile(ARGS arguments, int linecount)
 	fp = fopen(arguments.input_file, "a+");
 	int c;
 	int lineNumber = 0;
-	printf(" 0 - ");
 	while (1) 
-	{
+	{./
 		c = fgetc(fp);
 		if (feof(fp)) {
 			break;
 		}
 		if (c == 10)
 		{
+			
 			lineNumber++;
 			if (lineNumber >= linecount) 
 			{
 				//fclost(fp);
 				//return;
 				char c = '.';
-				cout << "Press enter for next page or e to exit";
+				cout << "\nEnter 'n' for next page or e to exit\n";
 				cin >> c;
 				if (c == 'e') 
 				{
@@ -68,6 +68,7 @@ void displayFile(ARGS arguments, int linecount)
 				}
 				lineNumber = 0;
 			}
+			cout << "\n" << lineNumber << " - ";
 		}		
 		else
 		{
