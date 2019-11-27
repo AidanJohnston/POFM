@@ -58,9 +58,9 @@ void displayFile(ARGS arguments, int linecount)
 			{
 				//fclost(fp);
 				//return;
-				char c = '';
+				char c = '.';
 				cout << "Press enter for next page or e to exit";
-				cin << c;
+				cin >> c;
 				if (c == 'e') 
 				{
 					fclose(fp);
