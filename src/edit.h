@@ -12,7 +12,7 @@ using namespace std;
 int getCharCount(ARGS arguments) 
 {
 	FILE * fp;
-	int count;
+	int count = 0;
 	fp = fopen(arguments.input_file, "a+");
 	int c;
 	int lineNumber = 0;
@@ -24,8 +24,8 @@ int getCharCount(ARGS arguments)
 			break;
 		}
 		
-			printf("%c", c);
-			count++;
+		//printf("%c", c);
+		count++;
 		
 	}
 	fclose(fp);
@@ -84,6 +84,8 @@ void append(ARGS arguments)
 
 void insert(ARGS arguments)
 {
+	int max = getCharCount(arguments);
+
 	ifstream file(arguments.input_file);
 	string fileString((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
 	clear(arguments);
@@ -91,8 +93,6 @@ void insert(ARGS arguments)
 	string input = "";
 	printf("Enter text to insert\n");
 	cin >> input;
-
-	int max = getCharCount(arguments);
 
 	printf("Enter index to place text\n");
 	int index;
