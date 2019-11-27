@@ -17,10 +17,12 @@ public:
 
 bool doesFileExist(char* filename) {
     FILE* fptr = fopen(filename, "r");
-    if(fptr)
+    if(fptr) {
         return true;
-    else
+    }
+    else {
         return false;
+    }
 }
 
 
