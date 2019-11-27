@@ -82,7 +82,7 @@ bool edit(ARGS arguments)
 	while (!exit)
 	{
 		
-		printf("\nEnter a command\na:append\nc:clear file\ni:insert text\np:print file contents\n");
+		printf("\nEnter a command\na: Append\nc: Clear File\ni: Insert Text\np: Print File Contents\ne: Exit\n");
 		char c = getchar();
 		getchar(); //get the newline out of the buffer
 		switch (c) 
@@ -97,7 +97,9 @@ bool edit(ARGS arguments)
 				break;
 			case 'e': exit = true;
 				break;
-			default: printf("INVALID\n");
+			default: 
+				printf("INVALID\n");
+				cout << "c";
 				break;
 		}
 	}
