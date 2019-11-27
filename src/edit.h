@@ -45,7 +45,7 @@ void displayFile(ARGS arguments, int linecount)
 	int c;
 	int lineNumber = 0;
 	while (1) 
-	{./
+	{
 		c = fgetc(fp);
 		if (feof(fp)) {
 			break;
