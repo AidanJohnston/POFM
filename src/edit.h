@@ -66,6 +66,7 @@ void displayFile(ARGS arguments, int linecount)
 					fclose(fp);
 					return;
 				}
+				lineNumber = 0;
 			}
 		}		
 		else
