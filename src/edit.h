@@ -93,7 +93,7 @@ void insert(ARGS arguments)
 	printf("Enter text to insert\n");
 	cin >> input;
 
-	printf("Enter index to place text\n");
+	printf("Enter index to place text, max index is %d\n", max);
 	int index;
 	cin >> index;
 	while (index > max) 
