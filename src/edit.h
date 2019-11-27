@@ -9,6 +9,29 @@
 
 using namespace std;
 
+int getCharCount(ARGS arguments) 
+{
+	FILE * fp;
+	int count;
+	fp = fopen(arguments.input_file, "a+");
+	int c;
+	int lineNumber = 0;
+	printf(" 0 - ");
+	while (1)
+	{
+		c = fgetc(fp);
+		if (feof(fp)) {
+			break;
+		}
+		
+			printf("%c", c);
+			count++;
+		
+	}
+	fclose(fp);
+	return count;
+}
+
 void clear(ARGS arguments){
     ofstream ofs;
     ofs.open(arguments.input_file, ofstream::out | ofstream::trunc);
@@ -69,9 +92,18 @@ void insert(ARGS arguments)
 	printf("Enter text to insert\n");
 	cin >> input;
 
+	int max = getCharCount(arguments);
+
 	printf("Enter index to place text\n");
 	int index;
 	cin >> index;
+	while (index > max) 
+	{
+		cout << "Index was out of range" << endl;
+		cin >> index;
+	}
+
+	
 
 	fileString.insert(index, input);
 
