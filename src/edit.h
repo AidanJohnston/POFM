@@ -54,7 +54,6 @@ void displayFile(ARGS arguments, int linecount)
 		if (c == 10)
 		{
 			lineNumber++;
-			printf("\n %d - ", lineNumber);
 			if (lineNumber >= linecount) 
 			{
 				//fclost(fp);
@@ -116,7 +115,7 @@ void insert(ARGS arguments)
 
 	ofstream fileOFStream;
 	fileOFStream.open(arguments.input_file, ios_base::app);
-	fileOFStream << endl << fileString;
+	fileOFStream << fileString;
 	fileOFStream.close();
 }
 
@@ -141,8 +140,8 @@ bool edit(ARGS arguments)
 				break;
 			case 'p': 
 				int linecount;
-				cout << "Enter the number of lines to read\n"
-				cin << linecount;
+				cout << "Enter the number of lines to read\n";
+				cin >> linecount;
 				displayFile(arguments, linecount);
 				break;
 			case 'e': exit = true;
