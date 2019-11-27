@@ -39,6 +39,7 @@ void displayFile(ARGS arguments)
 		}
 	}
 	fclose(fp);
+	cout << "\n";
 }
 
 void append(ARGS arguments) 
@@ -47,7 +48,7 @@ void append(ARGS arguments)
 	file.open(arguments.input_file, ios_base::app);
 	string input = "";
 	printf("Enter text to append\n");
-	getline(cin, input);
+	cin >> input;
 	file << endl << input;
 	file.close();
 }
@@ -60,7 +61,7 @@ void insert(ARGS arguments)
 	
 	string input = "";
 	printf("Enter text to insert\n");
-	getline(cin, input);
+	cin >> input;
 
 	printf("Enter index to place text\n");
 	int index;
@@ -83,8 +84,8 @@ bool edit(ARGS arguments)
 	{
 		
 		printf("\nEnter a command\na: Append\nc: Clear File\ni: Insert Text\np: Print File Contents\ne: Exit\n");
-		char c = getchar();
-		getchar(); //get the newline out of the buffer
+		char c;
+		cin >> c;
 		switch (c) 
 		{
 			case 'a': append(arguments);
@@ -99,11 +100,10 @@ bool edit(ARGS arguments)
 				break;
 			default: 
 				printf("INVALID\n");
-				cout << "c";
+				cout << "." << c << ".";
 				break;
 		}
 	}
-	getchar();
     return true;
 }
 
