@@ -98,7 +98,7 @@ void insert(ARGS arguments)
 	cin >> index;
 	while (index > max) 
 	{
-		cout << "Index was out of range" << endl;
+		cout << "Index was out of range, try again" << endl;
 		cin >> index;
 	}
 
