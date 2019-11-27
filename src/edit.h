@@ -3,6 +3,10 @@
 #include "stdio.h"
 #include "fstream"
 #include "iostream"
+#include <string>
+#include <fstream>
+#include <streambuf>
+
 using namespace std;
 void displayFile(ARGS arguments)
 {
@@ -39,6 +43,34 @@ void append(ARGS arguments)
 	getline(cin, input);
 	file << endl << input;
 	file.close();
+}
+
+void insert(ARGS arguments)
+{
+	std::ifstream file(arguments.input_file);
+	std::string fileString((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+	clear(arguments);
+	
+	string input = "";
+	printf("Enter text to insert\n");
+	getline(cin, input);
+
+	printf("Enter index to place text\n");
+	int index;
+	cin >> index;
+
+	fileString.insert(index, input);
+
+	ofstream fileOFStream;
+	fileOFStream.open(arguments.input_file, ios_base::app);
+	fileOFStream << endl << fileString;
+	fileOFStream.close();
+}
+
+void clear(ARGS arguments){
+	std::ofstream ofs;
+	ofs.open(arguments.input_file, std::ofstream::out | std::ofstream::trunc);
+	ofs.close();
 }
 
 bool edit(ARGS arguments) 
