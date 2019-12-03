@@ -10,7 +10,7 @@ While this stateless design was implemented for the Copy, Create, Move, Remove a
 
 ## User Manual
 
-### General User
+### General Usage
 
 The general use of the portable file management system is as follows:
 
