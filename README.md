@@ -20,7 +20,7 @@ The general use of the portable file management system is as follows:
 Where command is the type of command the user would like to use.  The current list of commands are create, remove, rename, copy, move, and edit.  A command is required for the pofm to execute.  See Commands for an in depth description of each command. Target File is the name of the file the user currently wants to operate on.  The Target File is required for the pofm to execute.
 
 
-### Options
+#### Options
 
 Option is a set an optional flags the user can call to change how the program handles the targetFile.  Multiple options can be set at once and don’t need to be in any particular order.
 
@@ -59,7 +59,7 @@ The create command creates a file given a target file.  If the file exists alrea
 ./pofm create [option] [targetFile]
 ```
 
-### Rename
+#### Rename
 
 The rename command, give a target file, rename it.  The rename command uses the output option.  If the output option is not used the name default.txt is used instead. 
 
@@ -67,7 +67,7 @@ The rename command, give a target file, rename it.  The rename command uses the 
 ./pofm rename [option] [targetFile]
 ```
 
-### Copy
+#### Copy
 
 The copy command, give a target file, will make a copy of it.  The copy command will use the output option to name the output file.  If no output is given it will default to default.txt.  The method for called copy is:
 
@@ -75,7 +75,7 @@ The copy command, give a target file, will make a copy of it.  The copy command 
 ./pofm copy [option] [targetFile]
 ```
 
-### Move
+#### Move
 
 The move command, given a target file, will move a file from one location to another.  The move command will use the output option to name the output file.  If no output is given, it will default to default.txt.  The method for calling move is:
 
@@ -83,7 +83,7 @@ The move command, given a target file, will move a file from one location to ano
 ./pofm move [option] [targetFile]
 ```
 
-### Edit
+#### Edit
 
 The edit command, given a target file, will open an interface to perform actions on the selected file.  These include: appending to the end of the file, clearing the file, inserting at a given character position, and printing the document.  While printing the document the user can specify how long they want each page to be.  The method for calling edit is:
 
